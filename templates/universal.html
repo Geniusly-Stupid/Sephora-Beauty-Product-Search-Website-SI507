@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Most Universal Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+        h1, h2 {
+            color: #0056b3;
+            text-align: center;
+        }
+        .card {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .card ul li {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+        .card ul li strong {
+            color: #0056b3;
+        }
+        .back-btn {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .back-btn a {
+            text-decoration: none;
+            background-color: #007BFF;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        .back-btn a:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Most Universal Product</h1>
+    
+    <div class="card">
+        <h2>{{ universal_product['name'] }}</h2>
+        <ul>
+            <li><strong>Brand:</strong> {{ universal_product['brand'] }}</li>
+            <li><strong>Price (USD):</strong> ${{ universal_product['price'] }}</li>
+            <li><strong>Rating:</strong> {{ universal_product['rating'] }} / 5</li>
+            <li><strong>Reviews:</strong> {{ universal_product.get('reviews', 'N/A') }}</li>
+            <li><strong>Size:</strong> {{ universal_product.get('size', 'N/A') }}</li>
+            <li><strong>Highlights:</strong> {{ universal_product.get('highlights', 'N/A') }}</li>
+            <li><strong>Primary Category:</strong> {{ universal_product.get('primary_category', 'N/A') }}</li>
+            <li><strong>Secondary Category:</strong> {{ universal_product.get('secondary_category', 'N/A') }}</li>
+            <li><strong>Tertiary Category:</strong> {{ universal_product.get('tertiary_category', 'N/A') }}</li>
+        </ul>
+    </div>
+    
+    <div class="back-btn">
+        <a href="/">Back to Home</a>
+    </div>
+</body>
+</html>
