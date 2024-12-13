@@ -104,7 +104,7 @@ You can interact with the network to explore how products are connected based on
 - Run the visualization script: `visualize.py`
 - Alternatively, explore the network interactively in a Jupyter Notebook: `Project_Exploration.ipynb`
 
-These tools are designed to make the network structure more accessible, enabling deeper insights into the relationships between products and their attributes.
+These tools are designed to make the network structure more accessible, enabling deeper insights into the relationships between products and their attributes. For efficiency and clarity, the program samples 1,000 data points. If you wish to see more, you can adjust the sampling parameters in the script or notebook.
 
 Enjoy uncovering patterns and clusters within the dataset! Let us know if you discover any interesting insights!
 
