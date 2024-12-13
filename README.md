@@ -106,6 +106,12 @@ These tools are designed to make the network structure more accessible, enabling
 
 Enjoy uncovering patterns and clusters within the dataset! Let us know if you discover any interesting insights!
 
+### Deployment
+
+This project was initially deployed using **Railway**, a popular platform for hosting web applications. However, Railway's free tier provides a storage limit of **512MB**, which is insufficient for the current application due to its data size and memory requirements.
+
+Efforts are underway to optimize the application's storage and memory usage to fit within the free tier limits. Once these optimizations are complete, the application will be re-deployed to ensure accessibility while remaining cost-effective. 
+
 ### **Acknowledgments**
 
 - [Sephora Dataset](https://www.kaggle.com/datasets/nadyinky/sephora-products-and-skincare-reviews/data)
