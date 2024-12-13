@@ -5,6 +5,8 @@ This project introduces a **search and similar product recommendation system** f
 
 Additionally, a **user-friendly website** has been created, allowing users to easily search, filter, and explore the dataset to discover beauty products of interest.
 
+If you'd like to see the project in action, check out the video demonstration here: https://youtu.be/sA1FCg8zoiQ.
+
 ### Dataset Overview
 
 This project uses the **Sephora Product and Skincare Review Dataset** from [Kaggle](https://www.kaggle.com/datasets/nadyinky/sephora-products-and-skincare-reviews/data). The dataset contains the following key components:
