@@ -1,11 +1,11 @@
 # Sephora Search and Similar Product Recommendation System   
 
-#### Project Overview
+### Project Overview
 This project introduces a **search and similar product recommendation system** for beauty products, leveraging the **Sephora Product and Skincare Review Dataset**. The system uses an **item-item graph** structure to represent products as **nodes** and their similarities as **edges**, enabling efficient recommendations through network analysis.
 
 Additionally, a **user-friendly website** has been created, allowing users to easily search, filter, and explore the dataset to discover beauty products of interest.
 
-#### Dataset Overview
+### Dataset Overview
 
 This project uses the **Sephora Product and Skincare Review Dataset** from [Kaggle](https://www.kaggle.com/datasets/nadyinky/sephora-products-and-skincare-reviews/data). The dataset contains the following key components:
 
@@ -15,7 +15,7 @@ This project uses the **Sephora Product and Skincare Review Dataset** from [Kagg
 For this project, only the **product metadata** is utilized, focusing on over **8,000 products** across various categories. 
 
 
-#### Modes of Interaction  
+### Modes of Interaction  
 The system allows users to explore the beauty product dataset in the following ways:
 
 1. **Search Product by Name:**  
@@ -34,7 +34,7 @@ The system allows users to explore the beauty product dataset in the following w
    - Highlights products with the highest similarity connections in a specific category, showing **widely applicable items**.  
    - **Example:** A best-selling **sunscreen** may link to various routines, such as **moisturizers, primers, or serums**, showcasing its versatility.
 
-#### System Requirements
+### System Requirements
 
 Ensure the following Python packages are installed:
 
@@ -49,7 +49,7 @@ Install the required dependencies using:
 pip install -r requirement.txt
 ```
 
-#### How to Run
+### How to Run
 
 1. Execute the application with the following command:
 
@@ -59,7 +59,7 @@ pip install -r requirement.txt
 
 2. Open the link displayed in the terminal (e.g., `http://127.0.0.1:5000`) to interact with the system.
 
-#### End-User Interaction
+### End-User Interaction
 
 Users can:
 
@@ -67,7 +67,7 @@ Users can:
 - Explore similar product recommendations based on content similarity.
 - Identify versatile, widely connected products in the dataset.
 
-#### Graph Structure and Construction
+### Graph Structure and Construction
 
 The system uses an **item-item graph** where:
 
