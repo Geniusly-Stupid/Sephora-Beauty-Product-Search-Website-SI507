@@ -83,7 +83,9 @@ def build_graph(data):
         data['product_name']
     )
     
-    svd = TruncatedSVD(n_components=400)  # Reduce dimensionality to 50
+    # Reduce dimensionality of TF-IDF vectors
+    # Save memory by reducing the number of dimensions
+    svd = TruncatedSVD(n_components=400)  # Reduce dimensionality to 400
     keywords_vectors = svd.fit_transform(keywords_vectors)
     
     print(f"TF-IDF vector shape: {keywords_vectors.shape}")

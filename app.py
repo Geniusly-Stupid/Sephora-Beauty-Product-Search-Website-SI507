@@ -41,10 +41,17 @@ def product_details():
     product_id = request.args.get('product_id', '')
     max_price = request.args.get('max_price', type=float)
     min_rating = request.args.get('min_rating', type=float)
+    
     product_details = get_product_stats(product_graph, int(product_id))
     search_keyword = request.args.get('name', '')
-    
-    recommendations = find_similar_with_conditions(product_graph, int(product_id), max_price, min_rating)
+
+    # Find recommendations based on conditions
+    recommendations = find_similar_with_conditions(
+        product_graph, 
+        int(product_id), 
+        max_price=max_price, 
+        min_rating=min_rating
+    )
     
     return render_template(
         'details.html',
@@ -54,6 +61,7 @@ def product_details():
         min_rating=min_rating,
         search_keyword=search_keyword
     )
+
 
 @app.route('/universal', methods=['GET'])
 def universal():

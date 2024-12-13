@@ -109,6 +109,7 @@
 
     <div class="recommended-products">
         <h2>Recommended Products</h2>
+        {% if recommendations %}
         <table>
             <thead>
                 <tr>
@@ -135,6 +136,9 @@
                 {% endfor %}
             </tbody>
         </table>
+        {% else %}
+        <p>No recommendations found.</p>
+        {% endif %}
     </div>
     
     <a href="/search?name={{ search_keyword }}&max_price={{ max_price }}&min_rating={{ min_rating }}" class="back-btn">Back to Search</a>
