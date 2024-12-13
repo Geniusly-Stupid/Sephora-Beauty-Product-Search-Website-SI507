@@ -1,4 +1,4 @@
-from graph_builder import build_graph, load_and_preprocess_data
+from DataStructure import build_graph, load_and_preprocess_data
 
 def search_product(graph, product_name):
     return [

@@ -1,5 +1,5 @@
 from flask import Flask, request, render_template, jsonify
-from graph_builder import build_graph, load_and_preprocess_data
+from DataStructure import build_graph, load_and_preprocess_data
 from recommender import search_product, search_product_with_conditions, get_product_stats, find_similar, find_similar_with_conditions, find_most_universal
 
 app = Flask(__name__)
