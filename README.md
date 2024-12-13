@@ -42,6 +42,7 @@ Ensure the following Python packages are installed:
 - `pandas`
 - `networkx==3.0`
 - `scikit-learn`
+- `plotly`
 
 Install the required dependencies using:
 
@@ -69,11 +70,14 @@ The website includes the following functionalities:
 
 2. **Search with Filters**  
    - **What it does**: Users can refine their search by applying conditions such as `max_price` or `min_rating`. The system will display products that meet the specified criteria.
+   
+3. **Click to See Detailed Information**
+   - **What it does**: Users can click on a product in the search results to view detailed information about the product, including its price, rating, reviews, size, highlights, and categories.
 
-3. **View Similar Product Recommendations**  
+4. **View Similar Product Recommendations**  
    - **What it does**: Users can click on a product to explore similar items based on shared attributes, such as category and description.
 
-4. **Identify the Most Universal Product in a Category**  
+5. **Identify the Most Universal Product in a Category**  
    - **What it does**: Users can select a **primary category** from a dropdown menu to view the most universally connected product in that category along with their details. 
 
 
@@ -85,7 +89,22 @@ The system is powered by an **item-item graph**, organized as follows:
 - **Edges**: Represent similarity scores between products, calculated using:
   - **Textual Features** (e.g., product descriptions and categories) via **TF-IDF** (80% weight).
   - **Numerical Features** (e.g., price, rating, and review count) after normalization (20% weight).  
-  - Edges are created between nodes when the similarity score exceeds **0.65**.
+  - Edges are created between nodes when the similarity score exceeds **0.75**.
+
+### Visualization
+
+To enhance the exploration of the network architecture, this project includes an **interactive network visualization tool**. The visualization provides an intuitive way to understand product relationships, node connectivity, and key clusters within the network.
+
+You can interact with the network to explore how products are connected based on their attributes. The tool supports zooming, panning, and hovering over nodes to view detailed information, such as product names, ratings, and similarities.
+
+#### How to Use:
+
+- Run the visualization script: `visualize.py`
+- Alternatively, explore the network interactively in a Jupyter Notebook: `Project_Exploration.ipynb`
+
+These tools are designed to make the network structure more accessible, enabling deeper insights into the relationships between products and their attributes.
+
+Enjoy uncovering patterns and clusters within the dataset! Let us know if you discover any interesting insights!
 
 ### **Acknowledgments**
 

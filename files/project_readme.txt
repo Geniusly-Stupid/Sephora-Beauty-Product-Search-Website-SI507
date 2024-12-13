@@ -5,7 +5,7 @@ This project is a **search and recommendation system** for beauty products, util
 
 ---
 
-### Website Features
+### How user interact with the program/website
 
 The website includes the following functionalities:
 
@@ -14,11 +14,14 @@ The website includes the following functionalities:
 
 2. **Search with Filters**  
    - **What it does**: Users can refine their search by applying conditions such as `max_price` or `min_rating`. The system will display products that meet the specified criteria.
+   
+3. **Click to See Detailed Information**
+   - **What it does**: Users can click on a product in the search results to view detailed information about the product, including its price, rating, reviews, size, highlights, and categories.
 
-3. **View Similar Product Recommendations**  
+4. **View Similar Product Recommendations**  
    - **What it does**: Users can click on a product to explore similar items based on shared attributes, such as category and description.
 
-4. **Identify the Most Universal Product in a Category**  
+5. **Identify the Most Universal Product in a Category**  
    - **What it does**: Users can select a **primary category** from a dropdown menu to view the most universally connected product in that category along with their details. 
 ---
 
@@ -28,6 +31,7 @@ The website includes the following functionalities:
 - `pandas`
 - `networkx==3.0`
 - `scikit-learn`
+- `plotly`
 
 Install dependencies using:
 ```bash
