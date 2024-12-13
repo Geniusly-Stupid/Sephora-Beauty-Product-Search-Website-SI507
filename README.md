@@ -59,31 +59,33 @@ pip install -r requirement.txt
 
 2. Open the link displayed in the terminal (e.g., `http://127.0.0.1:5000`) to interact with the system.
 
-### End-User Interaction
 
-Users can:
+### Website Features
 
-- Search for products by name or with filters.
-- Explore similar product recommendations based on content similarity.
-- Identify versatile, widely connected products in the dataset.
+The website includes the following functionalities:
 
-### Graph Structure and Construction
+1. **Search for Products by Name**  
+   - **What it does**: Users can type a product name into the search bar to find matching products along with their details (e.g., price, rating, and reviews).
 
-The system uses an **item-item graph** where:
+2. **Search with Filters**  
+   - **What it does**: Users can refine their search by applying conditions such as `max_price` or `min_rating`. The system will display products that meet the specified criteria.
 
-- **Nodes** represent products with attributes such as name, price, rating, and categories.
-- **Edges** denote similarity between products, calculated as a weighted combination of textual and numerical features.
+3. **View Similar Product Recommendations**  
+   - **What it does**: Users can click on a product to explore similar items based on shared attributes, such as category and description.
 
-**Similarity Calculation**:
+4. **Identify the Most Universal Product in a Category**  
+   - **What it does**: Users can select a **primary category** from a dropdown menu to view the most universally connected product in that category along with their details. 
 
-1. **TF-IDF for Textual Features**:
-    Text features (e.g., highlights, categories, and product names) are vectorized using TF-IDF.
-2. **Normalization of Numerical Features**:
-    Attributes like price, rating, and review count are scaled to a uniform range.
-3. Combining Similarities:
-   - **Textual Similarity Weight**: 0.8
-   - **Numerical Similarity Weight**: 0.2
-   - Products with a similarity score above **0.65** are connected.
+
+### Graph Structure
+
+The system is powered by an **item-item graph**, organized as follows:
+
+- **Nodes**: Represent individual products. Each node includes attributes such as name, brand, price, rating, number of reviews, and category.
+- **Edges**: Represent similarity scores between products, calculated using:
+  - **Textual Features** (e.g., product descriptions and categories) via **TF-IDF** (80% weight).
+  - **Numerical Features** (e.g., price, rating, and review count) after normalization (20% weight).  
+  - Edges are created between nodes when the similarity score exceeds **0.65**.
 
 ### **Acknowledgments**
 

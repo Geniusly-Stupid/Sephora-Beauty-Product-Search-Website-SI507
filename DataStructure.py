@@ -7,6 +7,18 @@ from sklearn.decomposition import TruncatedSVD
 import numpy as np
 
 def load_and_preprocess_data(filepath):
+    """
+    Load and preprocess data from a CSV file.
+    This function performs the following steps:
+    1. Loads data from the specified CSV file.
+    2. Drops rows with missing 'product_name'.
+    3. Fills missing numerical data ('rating', 'reviews', 'price') with the median value.
+    4. Fills missing categorical data ('highlights', 'size', 'primary_category', 'secondary_category', 'tertiary_category') with 'Non'.
+    Args:
+        filepath (str): The path to the CSV file containing the data.
+    Returns:
+        pandas.DataFrame: The cleaned and preprocessed data.
+    """
     # Load data
     data = pd.read_csv(filepath)
 
@@ -27,6 +39,24 @@ def load_and_preprocess_data(filepath):
     return data
 
 def build_graph(data):
+    """
+    Builds a graph from the given data where each product is a node and edges represent similarity between products.
+    Parameters:
+    data (pandas.DataFrame): DataFrame containing product information with columns:
+        - 'product_id': Unique identifier for the product
+        - 'product_name': Name of the product
+        - 'brand_name': Brand of the product
+        - 'price': Price of the product
+        - 'rating': Rating of the product
+        - 'reviews': Number of reviews for the product
+        - 'size': Size of the product
+        - 'highlights': Highlights or key features of the product
+        - 'primary_category': Primary category of the product
+        - 'secondary_category': Secondary category of the product
+        - 'tertiary_category': Tertiary category of the product
+    Returns:
+    networkx.Graph: A graph where nodes represent products and edges represent similarity between products based on textual and numerical attributes.
+    """
     G = nx.Graph()
 
     # Add nodes: Each product is a node with attributes
