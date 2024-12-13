@@ -82,10 +82,11 @@ def build_graph(data):
         data['tertiary_category'] + " " +
         data['product_name']
     )
-    print(f"TF-IDF vector shape: {keywords_vectors.shape}")
     
-    # svd = TruncatedSVD(n_components=35)  # Reduce dimensionality to 50
-    # keywords_vectors = svd.fit_transform(keywords_vectors)
+    svd = TruncatedSVD(n_components=400)  # Reduce dimensionality to 50
+    keywords_vectors = svd.fit_transform(keywords_vectors)
+    
+    print(f"TF-IDF vector shape: {keywords_vectors.shape}")
 
     # Step 2: Normalize numerical attributes
     scaler = MinMaxScaler()
@@ -107,7 +108,7 @@ def build_graph(data):
     # Add edges based on similarity threshold
     for i in range(len(data)):
         for j in range(i + 1, len(data)):
-            if similarity_matrix[i, j] > 0.65:  # Threshold for similarity (can be adjusted)
+            if similarity_matrix[i, j] > 0.75:  # Threshold for similarity (can be adjusted)
                 G.add_edge(data['product_id'][i], data['product_id'][j], weight=similarity_matrix[i, j])
     
     return G
