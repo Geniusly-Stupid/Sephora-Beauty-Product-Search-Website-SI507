@@ -4,6 +4,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.decomposition import TruncatedSVD
+from sklearn.preprocessing import OneHotEncoder
 import numpy as np
 
 def load_and_preprocess_data(filepath):
@@ -89,6 +90,16 @@ def build_graph(data):
     keywords_vectors = svd.fit_transform(keywords_vectors)
     
     print(f"TF-IDF vector shape: {keywords_vectors.shape}")
+
+    # Not a good idea to use one-hot encoding for categories
+    # # Step 2: One-Hot Encoding for categories
+    # category_data = data[['primary_category', 'secondary_category', 'tertiary_category']].fillna("Unknown")
+    # onehot_encoder = OneHotEncoder(sparse_output=False, handle_unknown='ignore')
+    # category_vectors = onehot_encoder.fit_transform(category_data)
+    # print(f"Category one-hot encoding shape: {category_vectors.shape}")
+    
+    # # Combine textual features and category features
+    # text_and_category = np.hstack([text_features.toarray(), category_features])
 
     # Step 2: Normalize numerical attributes
     scaler = MinMaxScaler()
